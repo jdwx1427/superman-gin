@@ -1,8 +1,8 @@
 # superman-gin
 
-GoLang version ： go 1.20
+## GoLang version ： go 1.20
 
-整合 Swaager ：
+### 整合 Swaager ：
     1、go install github.com/swaggo/swag/cmd/swag@latest
     2、swag init
     3、go get -u github.com/swaggo/gin-swagger
