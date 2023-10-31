@@ -1,6 +1,7 @@
 package app
 
 import (
+	"net/http"
 	"superman-gin/app/common/request"
 	"superman-gin/app/common/response"
 	"superman-gin/app/services"
@@ -63,4 +64,19 @@ func Logout(c *gin.Context) {
 		return
 	}
 	response.Success(c, nil)
+}
+
+// @BasePath /api/auth
+
+// PingExample godoc
+// @Summary ping example
+// @Schemes
+// @Description do ping
+// @Tags example
+// @Accept json
+// @Produce json
+// @Success 200 {string} Helloworld
+// @Router /helloworld [get]
+func Helloworld(g *gin.Context) {
+	g.JSON(http.StatusOK, "helloworld")
 }

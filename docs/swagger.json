@@ -1,0 +1,35 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Gin  Swagger  API",
+        "contact": {},
+        "version": "2.0"
+    },
+    "host": "http://localhost:8888",
+    "basePath": "/api",
+    "paths": {
+        "/helloworld": {
+            "get": {
+                "description": "do ping",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "example"
+                ],
+                "summary": "ping example",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
