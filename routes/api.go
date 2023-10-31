@@ -7,6 +7,8 @@ import (
 	"superman-gin/app/services"
 
 	"github.com/gin-gonic/gin"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
 // SetApiGroupRoutes 定义 api 分组路由
@@ -19,5 +21,7 @@ func SetApiGroupRoutes(router *gin.RouterGroup) {
 		authRouter.POST("/auth/logout", app.Logout)
 		authRouter.POST("/image_upload", common.ImageUpload)
 	}
+	router.GET("/auth/helloworld", app.Helloworld)
+	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 }

@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"os"
 	"superman-gin/app/middleware"
+	"superman-gin/docs"
 	"superman-gin/global"
 	"superman-gin/routes"
 	"time"
@@ -39,10 +40,10 @@ func setupRouter() *gin.Engine {
 	return router
 }
 
-// RunServer 启动服务器
+// @title Gin Swagger API
 func RunServer() {
 	r := setupRouter()
-
+	docs.SwaggerInfo.BasePath = "/api/auth"
 	srv := &http.Server{
 		Addr:    ":" + global.App.Config.App.Port,
 		Handler: r,
