@@ -68,11 +68,11 @@ func Logout(c *gin.Context) {
 
 // @BasePath /api/auth
 
-// PingExample godoc
-// @Summary ping example
+// 测试 godoc
+// @Summary 测试一下
 // @Schemes
 // @Description do ping
-// @Tags example
+// @Tags 测试
 // @Accept json
 // @Produce json
 // @Success 200 {string} Helloworld

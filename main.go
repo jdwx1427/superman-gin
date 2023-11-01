@@ -8,7 +8,7 @@ import (
 // @title Gin  Swagger  API
 // @version 2.0
 
-// @host http://localhost:8888
+// @host localhost:8888
 // @BasePath /api
 func main() {
 	// 初始化配置
