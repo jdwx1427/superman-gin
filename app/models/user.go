@@ -8,7 +8,7 @@ type User struct {
 	Mobile   string `json:"mobile" gorm:"not null;index;comment:用户手机号"`
 	Password string `json:"password" gorm:"not null;default:'';comment:用户密码"`
 	Timestamps
-	SoftDeletes
+	Status
 }
 
 func (user User) GetUid() string {
