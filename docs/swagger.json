@@ -5,7 +5,7 @@
         "contact": {},
         "version": "2.0"
     },
-    "host": "http://localhost:8888",
+    "host": "localhost:8888",
     "basePath": "/api",
     "paths": {
         "/helloworld": {
@@ -18,9 +18,9 @@
                     "application/json"
                 ],
                 "tags": [
-                    "example"
+                    "测试"
                 ],
-                "summary": "ping example",
+                "summary": "测试一下",
                 "responses": {
                     "200": {
                         "description": "OK",

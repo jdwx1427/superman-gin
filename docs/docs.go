@@ -25,9 +25,9 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "example"
+                    "测试"
                 ],
-                "summary": "ping example",
+                "summary": "测试一下",
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -44,7 +44,7 @@ const docTemplate = `{
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
 	Version:          "2.0",
-	Host:             "http://localhost:8888",
+	Host:             "localhost:8888",
 	BasePath:         "/api",
 	Schemes:          []string{},
 	Title:            "Gin  Swagger  API",

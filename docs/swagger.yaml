@@ -1,5 +1,5 @@
 basePath: /api
-host: http://localhost:8888
+host: localhost:8888
 info:
   contact: {}
   title: Gin  Swagger  API
@@ -17,7 +17,7 @@ paths:
           description: OK
           schema:
             type: string
-      summary: ping example
+      summary: 测试一下
       tags:
-      - example
+      - 测试
 swagger: "2.0"
