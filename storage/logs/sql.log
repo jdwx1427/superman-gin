@@ -1,72 +1,48 @@
 
-2023/11/01 22:30:03 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
-[0.085ms] [rows:-] SELECT DATABASE()
+2023/11/01 23:38:30 /Users/jideweixiao/Project/work/superman-gin/app/services/user.go:19 record not found
+[1.030ms] [rows:0] SELECT `id` FROM `users` WHERE mobile = '15000505567' ORDER BY `users`.`id` LIMIT 1
 
-2023/11/01 22:30:03 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
-[2.255ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'superman_go%' ORDER BY SCHEMA_NAME='superman_go' DESC,SCHEMA_NAME limit 1
+2023/11/01 23:38:30 /Users/jideweixiao/Project/work/superman-gin/app/services/user.go:25 Error 1292 (22007): Incorrect datetime value: '0000-00-00' for column 'create_time' at row 1
+[0.536ms] [rows:0] INSERT INTO `users` (`name`,`mobile`,`password`,`create_time`,`update_time`,`status`) VALUES ('liming','15000505567','$2a$04$50ujFxdpg/5noIem/BZ/j.YldbZKkrNlE6BNNL0NlkxhEO2DuVPuu','0000-00-00 00:00:00','0000-00-00 00:00:00',1)
 
-2023/11/01 22:30:03 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
-[0.311ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'superman_go' AND table_name = 'users' AND table_type = 'BASE TABLE'
+2023/11/01 23:39:39 /Users/jideweixiao/Project/work/superman-gin/app/services/user.go:19 record not found
+[0.487ms] [rows:0] SELECT `id` FROM `users` WHERE mobile = '15000505567' ORDER BY `users`.`id` LIMIT 1
 
-2023/11/01 22:30:03 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
-[13.820ms] [rows:0] CREATE TABLE `users` (`id` bigint unsigned AUTO_INCREMENT COMMENT '主键ID',`name` varchar(191) NOT NULL COMMENT '用户名称',`mobile` varchar(191) NOT NULL COMMENT '用户手机号',`password` varchar(191) NOT NULL DEFAULT '' COMMENT '用户密码',`create_time` datetime NOT NULL COMMENT '开始时间',`update_time` datetime NOT NULL COMMENT '修改时间',`deleted_at` datetime NULL,PRIMARY KEY (`id`),INDEX `idx_users_mobile` (`mobile`),INDEX `idx_users_deleted_at` (`deleted_at`))
+2023/11/01 23:39:39 /Users/jideweixiao/Project/work/superman-gin/app/services/user.go:25 Error 1292 (22007): Incorrect datetime value: '0000-00-00' for column 'create_time' at row 1
+[0.540ms] [rows:0] INSERT INTO `users` (`name`,`mobile`,`password`,`create_time`,`update_time`,`status`) VALUES ('liming','15000505567','$2a$04$PbLvaLiGONPAw8tm8my7e.pWD0rSYuXbQF0ZcvAlZU6TQXysbFP/O','0000-00-00 00:00:00','0000-00-00 00:00:00',1)
 
-2023/11/01 22:30:03 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
-[0.160ms] [rows:-] SELECT DATABASE()
+2023/11/01 23:39:40 /Users/jideweixiao/Project/work/superman-gin/app/services/user.go:19 record not found
+[0.449ms] [rows:0] SELECT `id` FROM `users` WHERE mobile = '15000505567' ORDER BY `users`.`id` LIMIT 1
 
-2023/11/01 22:30:03 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
-[0.528ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'superman_go%' ORDER BY SCHEMA_NAME='superman_go' DESC,SCHEMA_NAME limit 1
+2023/11/01 23:39:40 /Users/jideweixiao/Project/work/superman-gin/app/services/user.go:25 Error 1292 (22007): Incorrect datetime value: '0000-00-00' for column 'create_time' at row 1
+[0.361ms] [rows:0] INSERT INTO `users` (`name`,`mobile`,`password`,`create_time`,`update_time`,`status`) VALUES ('liming','15000505567','$2a$04$jClFEFg14q2Fe/5yOPZViuGBh36JfeBWR1DFiIIWgDC.duAR91PM.','0000-00-00 00:00:00','0000-00-00 00:00:00',1)
 
-2023/11/01 22:30:03 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
-[0.208ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'superman_go' AND table_name = 'media' AND table_type = 'BASE TABLE'
+2023/11/01 23:39:40 /Users/jideweixiao/Project/work/superman-gin/app/services/user.go:19 record not found
+[0.399ms] [rows:0] SELECT `id` FROM `users` WHERE mobile = '15000505567' ORDER BY `users`.`id` LIMIT 1
 
-2023/11/01 22:30:03 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
-[8.112ms] [rows:0] CREATE TABLE `media` (`id` bigint unsigned AUTO_INCREMENT COMMENT '主键ID',`disk_type` varchar(20) NOT NULL COMMENT '存储类型',`src_type` tinyint NOT NULL COMMENT '链接类型 1相对路径 2外链',`src` varchar(191) NOT NULL COMMENT '资源链接',`create_time` datetime NOT NULL COMMENT '开始时间',`update_time` datetime NOT NULL COMMENT '修改时间',PRIMARY KEY (`id`),INDEX `idx_media_disk_type` (`disk_type`))
+2023/11/01 23:39:40 /Users/jideweixiao/Project/work/superman-gin/app/services/user.go:25 Error 1292 (22007): Incorrect datetime value: '0000-00-00' for column 'create_time' at row 1
+[0.356ms] [rows:0] INSERT INTO `users` (`name`,`mobile`,`password`,`create_time`,`update_time`,`status`) VALUES ('liming','15000505567','$2a$04$akeD.lD3fIDaB4HQTMFSCuHNyk2hn7kU8fJTOOFHzGveHrlYvogP6','0000-00-00 00:00:00','0000-00-00 00:00:00',1)
 
-2023/11/01 22:30:40 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
-[0.093ms] [rows:-] SELECT DATABASE()
+2023/11/01 23:39:48 /Users/jideweixiao/Project/work/superman-gin/app/services/user.go:19 record not found
+[0.765ms] [rows:0] SELECT `id` FROM `users` WHERE mobile = '15000505567' ORDER BY `users`.`id` LIMIT 1
 
-2023/11/01 22:30:40 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
-[0.797ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'superman_go%' ORDER BY SCHEMA_NAME='superman_go' DESC,SCHEMA_NAME limit 1
+2023/11/01 23:39:48 /Users/jideweixiao/Project/work/superman-gin/app/services/user.go:25
+[1.661ms] [rows:1] INSERT INTO `users` (`name`,`mobile`,`password`,`status`) VALUES ('liming','15000505567','$2a$04$vYFLMsduLrwITKbNWutrNuDey/MVjUdN3p3hqKJIrTkpaXX6ksPLK',1)
 
-2023/11/01 22:30:40 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
-[0.186ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'superman_go' AND table_name = 'users' AND table_type = 'BASE TABLE'
+2023/11/01 23:40:02 /Users/jideweixiao/Project/work/superman-gin/app/services/user.go:19 record not found
+[0.431ms] [rows:0] SELECT `id` FROM `users` WHERE mobile = '17622221111' ORDER BY `users`.`id` LIMIT 1
 
-2023/11/01 22:30:40 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
-[8.475ms] [rows:0] CREATE TABLE `users` (`id` bigint unsigned AUTO_INCREMENT COMMENT '主键ID',`name` varchar(191) NOT NULL COMMENT '用户名称',`mobile` varchar(191) NOT NULL COMMENT '用户手机号',`password` varchar(191) NOT NULL DEFAULT '' COMMENT '用户密码',`create_time` datetime NOT NULL COMMENT '开始时间',`update_time` datetime NOT NULL COMMENT '修改时间',`deleted_at` datetime NULL,PRIMARY KEY (`id`),INDEX `idx_users_mobile` (`mobile`),INDEX `idx_users_deleted_at` (`deleted_at`))
+2023/11/01 23:40:02 /Users/jideweixiao/Project/work/superman-gin/app/services/user.go:25
+[0.545ms] [rows:1] INSERT INTO `users` (`name`,`mobile`,`password`,`status`) VALUES ('刘俊伟','17622221111','$2a$04$M4nol7sbjmt.PgdtXGflt.izmv5Gc7Kb3N822Pg8WjtHdeRi9Ty0W',1)
 
-2023/11/01 22:30:40 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
-[0.135ms] [rows:-] SELECT DATABASE()
+2023/11/01 23:41:47 /Users/jideweixiao/Project/work/superman-gin/app/services/user.go:19 record not found
+[1.035ms] [rows:0] SELECT `id` FROM `users` WHERE mobile = '16522221111' ORDER BY `users`.`id` LIMIT 1
 
-2023/11/01 22:30:40 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
-[0.394ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'superman_go%' ORDER BY SCHEMA_NAME='superman_go' DESC,SCHEMA_NAME limit 1
+2023/11/01 23:41:47 /Users/jideweixiao/Project/work/superman-gin/app/services/user.go:25
+[1.511ms] [rows:1] INSERT INTO `users` (`name`,`mobile`,`password`,`status`) VALUES ('string','16522221111','$2a$04$x4vKleh3DnJhlUkOWl3AAODtYbnOP4iH7ilro9WSkQLQhS8LtJbUa',1)
 
-2023/11/01 22:30:40 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
-[0.184ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'superman_go' AND table_name = 'media' AND table_type = 'BASE TABLE'
+2023/11/01 23:49:17 /Users/jideweixiao/Project/work/superman-gin/app/services/user.go:19 record not found
+[0.812ms] [rows:0] SELECT `id` FROM `users` WHERE mobile = '15000505577' ORDER BY `users`.`id` LIMIT 1
 
-2023/11/01 22:30:40 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
-[4.433ms] [rows:0] CREATE TABLE `media` (`id` bigint unsigned AUTO_INCREMENT COMMENT '主键ID',`disk_type` varchar(20) NOT NULL COMMENT '存储类型',`src_type` tinyint NOT NULL COMMENT '链接类型 1相对路径 2外链',`src` varchar(191) NOT NULL COMMENT '资源链接',`create_time` datetime NOT NULL COMMENT '开始时间',`update_time` datetime NOT NULL COMMENT '修改时间',`status` tinyint NOT NULL DEFAULT 1 COMMENT '状态：0->无效，1->正常',PRIMARY KEY (`id`),INDEX `idx_media_disk_type` (`disk_type`))
-
-2023/11/01 22:31:23 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
-[0.084ms] [rows:-] SELECT DATABASE()
-
-2023/11/01 22:31:23 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
-[0.970ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'superman_go%' ORDER BY SCHEMA_NAME='superman_go' DESC,SCHEMA_NAME limit 1
-
-2023/11/01 22:31:23 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
-[0.256ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'superman_go' AND table_name = 'users' AND table_type = 'BASE TABLE'
-
-2023/11/01 22:31:23 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
-[4.773ms] [rows:0] CREATE TABLE `users` (`id` bigint unsigned AUTO_INCREMENT COMMENT '主键ID',`name` varchar(191) NOT NULL COMMENT '用户名称',`mobile` varchar(191) NOT NULL COMMENT '用户手机号',`password` varchar(191) NOT NULL DEFAULT '' COMMENT '用户密码',`create_time` datetime NOT NULL COMMENT '开始时间',`update_time` datetime NOT NULL COMMENT '修改时间',`status` tinyint NOT NULL DEFAULT 1 COMMENT '状态：0->无效，1->正常',PRIMARY KEY (`id`),INDEX `idx_users_mobile` (`mobile`))
-
-2023/11/01 22:31:23 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
-[0.065ms] [rows:-] SELECT DATABASE()
-
-2023/11/01 22:31:23 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
-[0.392ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'superman_go%' ORDER BY SCHEMA_NAME='superman_go' DESC,SCHEMA_NAME limit 1
-
-2023/11/01 22:31:23 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
-[0.192ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'superman_go' AND table_name = 'media' AND table_type = 'BASE TABLE'
-
-2023/11/01 22:31:23 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
-[4.714ms] [rows:0] CREATE TABLE `media` (`id` bigint unsigned AUTO_INCREMENT COMMENT '主键ID',`disk_type` varchar(20) NOT NULL COMMENT '存储类型',`src_type` tinyint NOT NULL COMMENT '链接类型 1相对路径 2外链',`src` varchar(191) NOT NULL COMMENT '资源链接',`create_time` datetime NOT NULL COMMENT '开始时间',`update_time` datetime NOT NULL COMMENT '修改时间',`status` tinyint NOT NULL DEFAULT 1 COMMENT '状态：0->无效，1->正常',PRIMARY KEY (`id`),INDEX `idx_media_disk_type` (`disk_type`))
+2023/11/01 23:49:17 /Users/jideweixiao/Project/work/superman-gin/app/services/user.go:25
+[0.645ms] [rows:1] INSERT INTO `users` (`name`,`mobile`,`password`,`status`) VALUES ('李明','15000505577','$2a$04$eV1E5n8gZ7a2PH4yQHLrlu6Gf98vijcuq546Ne8xdb/4vY9X9pphy',1)

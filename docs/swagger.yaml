@@ -1,4 +1,29 @@
 basePath: /api
+definitions:
+  request.Register:
+    properties:
+      mobile:
+        type: string
+      name:
+        type: string
+      password:
+        type: string
+    required:
+    - mobile
+    - name
+    - password
+    type: object
+  response.Response:
+    properties:
+      data:
+        description: 数据
+      error_code:
+        description: 自定义错误码
+        type: integer
+      message:
+        description: 信息
+        type: string
+    type: object
 host: localhost:8888
 info:
   contact: {}
@@ -20,4 +45,31 @@ paths:
       summary: 测试一下
       tags:
       - 测试
+  /register:
+    post:
+      consumes:
+      - application/json
+      description: 创建项目
+      parameters:
+      - description: 手机号，名称,密码
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/request.Register'
+      responses:
+        "200":
+          description: '{"code": 200, "data": [...]}'
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.Response'
+            - properties:
+                data:
+                  type: object
+              type: object
+      security:
+      - Bearer: []
+      summary: 用户注册账号
+      tags:
+      - 项目管理
 swagger: "2.0"

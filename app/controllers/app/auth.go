@@ -10,6 +10,15 @@ import (
 	"github.com/golang-jwt/jwt/v4"
 )
 
+// @Summary 用户注册账号
+// @Description 创建项目
+// @Tags 项目管理
+// @Accept  application/json
+// @Product application/json
+// @Param data body request.Register true "手机号，名称,密码"
+// @Success 200 {object} response.Response{data=object} "{"code": 200, "data": [...]}"
+// @Router /register [post]
+// @Security Bearer
 func Register(c *gin.Context) {
 	var form request.Register
 	if err := c.ShouldBindJSON(&form); err != nil {
