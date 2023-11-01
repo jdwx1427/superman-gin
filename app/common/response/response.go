@@ -18,13 +18,13 @@ type Response struct {
 // Success 响应成功 ErrorCode 为 0 表示成功
 func Success(c *gin.Context, data interface{}) {
 	c.JSON(http.StatusOK, Response{
-		0,
+		200,
 		data,
-		"ok",
+		"success",
 	})
 }
 
-// Fail 响应失败 ErrorCode 不为 0 表示失š
+// Fail 响应失败 ErrorCode 不为 2000 表示失败
 func Fail(c *gin.Context, errorCode int, msg string) {
 	c.JSON(http.StatusOK, Response{
 		errorCode,
