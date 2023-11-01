@@ -6,4 +6,5 @@ type Media struct {
 	SrcType  int8   `json:"src_type" gorm:"not null;comment:链接类型 1相对路径 2外链"`
 	Src      string `json:"src" gorm:"not null;comment:资源链接"`
 	Timestamps
+	Status
 }

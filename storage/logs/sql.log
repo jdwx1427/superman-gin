@@ -1,0 +1,72 @@
+
+2023/11/01 22:30:03 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
+[0.085ms] [rows:-] SELECT DATABASE()
+
+2023/11/01 22:30:03 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
+[2.255ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'superman_go%' ORDER BY SCHEMA_NAME='superman_go' DESC,SCHEMA_NAME limit 1
+
+2023/11/01 22:30:03 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
+[0.311ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'superman_go' AND table_name = 'users' AND table_type = 'BASE TABLE'
+
+2023/11/01 22:30:03 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
+[13.820ms] [rows:0] CREATE TABLE `users` (`id` bigint unsigned AUTO_INCREMENT COMMENT '主键ID',`name` varchar(191) NOT NULL COMMENT '用户名称',`mobile` varchar(191) NOT NULL COMMENT '用户手机号',`password` varchar(191) NOT NULL DEFAULT '' COMMENT '用户密码',`create_time` datetime NOT NULL COMMENT '开始时间',`update_time` datetime NOT NULL COMMENT '修改时间',`deleted_at` datetime NULL,PRIMARY KEY (`id`),INDEX `idx_users_mobile` (`mobile`),INDEX `idx_users_deleted_at` (`deleted_at`))
+
+2023/11/01 22:30:03 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
+[0.160ms] [rows:-] SELECT DATABASE()
+
+2023/11/01 22:30:03 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
+[0.528ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'superman_go%' ORDER BY SCHEMA_NAME='superman_go' DESC,SCHEMA_NAME limit 1
+
+2023/11/01 22:30:03 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
+[0.208ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'superman_go' AND table_name = 'media' AND table_type = 'BASE TABLE'
+
+2023/11/01 22:30:03 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
+[8.112ms] [rows:0] CREATE TABLE `media` (`id` bigint unsigned AUTO_INCREMENT COMMENT '主键ID',`disk_type` varchar(20) NOT NULL COMMENT '存储类型',`src_type` tinyint NOT NULL COMMENT '链接类型 1相对路径 2外链',`src` varchar(191) NOT NULL COMMENT '资源链接',`create_time` datetime NOT NULL COMMENT '开始时间',`update_time` datetime NOT NULL COMMENT '修改时间',PRIMARY KEY (`id`),INDEX `idx_media_disk_type` (`disk_type`))
+
+2023/11/01 22:30:40 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
+[0.093ms] [rows:-] SELECT DATABASE()
+
+2023/11/01 22:30:40 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
+[0.797ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'superman_go%' ORDER BY SCHEMA_NAME='superman_go' DESC,SCHEMA_NAME limit 1
+
+2023/11/01 22:30:40 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
+[0.186ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'superman_go' AND table_name = 'users' AND table_type = 'BASE TABLE'
+
+2023/11/01 22:30:40 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
+[8.475ms] [rows:0] CREATE TABLE `users` (`id` bigint unsigned AUTO_INCREMENT COMMENT '主键ID',`name` varchar(191) NOT NULL COMMENT '用户名称',`mobile` varchar(191) NOT NULL COMMENT '用户手机号',`password` varchar(191) NOT NULL DEFAULT '' COMMENT '用户密码',`create_time` datetime NOT NULL COMMENT '开始时间',`update_time` datetime NOT NULL COMMENT '修改时间',`deleted_at` datetime NULL,PRIMARY KEY (`id`),INDEX `idx_users_mobile` (`mobile`),INDEX `idx_users_deleted_at` (`deleted_at`))
+
+2023/11/01 22:30:40 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
+[0.135ms] [rows:-] SELECT DATABASE()
+
+2023/11/01 22:30:40 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
+[0.394ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'superman_go%' ORDER BY SCHEMA_NAME='superman_go' DESC,SCHEMA_NAME limit 1
+
+2023/11/01 22:30:40 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
+[0.184ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'superman_go' AND table_name = 'media' AND table_type = 'BASE TABLE'
+
+2023/11/01 22:30:40 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
+[4.433ms] [rows:0] CREATE TABLE `media` (`id` bigint unsigned AUTO_INCREMENT COMMENT '主键ID',`disk_type` varchar(20) NOT NULL COMMENT '存储类型',`src_type` tinyint NOT NULL COMMENT '链接类型 1相对路径 2外链',`src` varchar(191) NOT NULL COMMENT '资源链接',`create_time` datetime NOT NULL COMMENT '开始时间',`update_time` datetime NOT NULL COMMENT '修改时间',`status` tinyint NOT NULL DEFAULT 1 COMMENT '状态：0->无效，1->正常',PRIMARY KEY (`id`),INDEX `idx_media_disk_type` (`disk_type`))
+
+2023/11/01 22:31:23 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
+[0.084ms] [rows:-] SELECT DATABASE()
+
+2023/11/01 22:31:23 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
+[0.970ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'superman_go%' ORDER BY SCHEMA_NAME='superman_go' DESC,SCHEMA_NAME limit 1
+
+2023/11/01 22:31:23 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
+[0.256ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'superman_go' AND table_name = 'users' AND table_type = 'BASE TABLE'
+
+2023/11/01 22:31:23 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
+[4.773ms] [rows:0] CREATE TABLE `users` (`id` bigint unsigned AUTO_INCREMENT COMMENT '主键ID',`name` varchar(191) NOT NULL COMMENT '用户名称',`mobile` varchar(191) NOT NULL COMMENT '用户手机号',`password` varchar(191) NOT NULL DEFAULT '' COMMENT '用户密码',`create_time` datetime NOT NULL COMMENT '开始时间',`update_time` datetime NOT NULL COMMENT '修改时间',`status` tinyint NOT NULL DEFAULT 1 COMMENT '状态：0->无效，1->正常',PRIMARY KEY (`id`),INDEX `idx_users_mobile` (`mobile`))
+
+2023/11/01 22:31:23 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
+[0.065ms] [rows:-] SELECT DATABASE()
+
+2023/11/01 22:31:23 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
+[0.392ms] [rows:1] SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'superman_go%' ORDER BY SCHEMA_NAME='superman_go' DESC,SCHEMA_NAME limit 1
+
+2023/11/01 22:31:23 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
+[0.192ms] [rows:-] SELECT count(*) FROM information_schema.tables WHERE table_schema = 'superman_go' AND table_name = 'media' AND table_type = 'BASE TABLE'
+
+2023/11/01 22:31:23 /Users/jideweixiao/Project/work/superman-gin/bootstrap/db.go:108
+[4.714ms] [rows:0] CREATE TABLE `media` (`id` bigint unsigned AUTO_INCREMENT COMMENT '主键ID',`disk_type` varchar(20) NOT NULL COMMENT '存储类型',`src_type` tinyint NOT NULL COMMENT '链接类型 1相对路径 2外链',`src` varchar(191) NOT NULL COMMENT '资源链接',`create_time` datetime NOT NULL COMMENT '开始时间',`update_time` datetime NOT NULL COMMENT '修改时间',`status` tinyint NOT NULL DEFAULT 1 COMMENT '状态：0->无效，1->正常',PRIMARY KEY (`id`),INDEX `idx_media_disk_type` (`disk_type`))
