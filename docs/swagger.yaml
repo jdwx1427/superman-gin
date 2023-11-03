@@ -1,5 +1,15 @@
 basePath: /api
 definitions:
+  request.Login:
+    properties:
+      mobile:
+        type: string
+      password:
+        type: string
+    required:
+    - mobile
+    - password
+    type: object
   request.Register:
     properties:
       mobile:
@@ -45,6 +55,26 @@ paths:
       summary: 测试一下
       tags:
       - 测试
+  /login:
+    post:
+      consumes:
+      - application/json
+      description: 创建项目
+      responses:
+        "200":
+          description: '{"code": 200, "data": [...]}'
+          schema:
+            allOf:
+            - $ref: '#/definitions/response.Response'
+            - properties:
+                data:
+                  type: object
+              type: object
+      security:
+      - Bearer: []
+      summary: 用户退出账号
+      tags:
+      - 项目管理
   /register:
     post:
       consumes:

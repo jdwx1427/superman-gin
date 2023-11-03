@@ -38,6 +38,15 @@ func Register(c *gin.Context) {
 	}
 }
 
+// @Summary 用户登录账号
+// @Description 创建项目
+// @Tags 项目管理
+// @Accept  application/json
+// @Product application/json
+// @Param data body request.Login true "手机号，密码"
+// @Success 200 {object} response.Response{data=object} "{"code": 200, "data": [...]}"
+// @Router /login [post]
+// @Security Bearer
 func Login(c *gin.Context) {
 	var form request.Login
 	if err := c.ShouldBindJSON(&form); err != nil {

@@ -46,3 +46,9 @@
 
 2023/11/01 23:49:17 /Users/jideweixiao/Project/work/superman-gin/app/services/user.go:25
 [0.645ms] [rows:1] INSERT INTO `users` (`name`,`mobile`,`password`,`status`) VALUES ('李明','15000505577','$2a$04$eV1E5n8gZ7a2PH4yQHLrlu6Gf98vijcuq546Ne8xdb/4vY9X9pphy',1)
+
+2023/11/03 21:59:55 /Users/jideweixiao/Project/work/superman-gin/app/services/user.go:31
+[1.684ms] [rows:1] SELECT * FROM `users` WHERE mobile = '15000505577' ORDER BY `users`.`id` LIMIT 1
+
+2023/11/03 22:00:31 /Users/jideweixiao/Project/work/superman-gin/app/services/user.go:31
+[0.507ms] [rows:1] SELECT * FROM `users` WHERE mobile = '15000505577' ORDER BY `users`.`id` LIMIT 1
