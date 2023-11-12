@@ -2,8 +2,8 @@ package bootstrap
 
 import (
 	"os"
+	"superman-gin/app/common/utils"
 	"superman-gin/global"
-	"superman-gin/utils"
 	"time"
 
 	"go.uber.org/zap"

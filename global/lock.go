@@ -2,7 +2,7 @@ package global
 
 import (
 	"context"
-	"superman-gin/utils"
+	"superman-gin/app/common/utils"
 	"time"
 
 	"github.com/go-redis/redis/v8"

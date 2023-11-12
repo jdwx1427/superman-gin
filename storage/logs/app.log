@@ -1,0 +1,552 @@
+
+
+[31m2023/11/12 02:40:19 [Recovery] 2023/11/12 - 02:40:19 panic recovered:
+POST /api/auth/register HTTP/1.1
+Host: localhost:8888
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 81
+Content-Type: application/json
+Postman-Token: e41fdd06-4922-429f-8128-9ce1bc248988
+User-Agent: PostmanRuntime/7.29.2
+
+
+runtime error: invalid memory address or nil pointer dereference
+/usr/local/go/src/runtime/panic.go:260 (0x1025bdff7)
+	panicmem: panic(memoryError)
+/usr/local/go/src/runtime/signal_unix.go:841 (0x1025d6aa7)
+	sigpanic: panicmem()
+/Users/jideweixiao/Project/work/superman-gin/app/common/utils/str.go:23 (0x102b9030c)
+	GetClientIP: xForwardedFor := r.Header.Get("X-Forwarded-For")
+/Users/jideweixiao/Project/work/superman-gin/app/services/user.go:26 (0x102ca4027)
+	(*userService).Register: user = models.User{Name: params.Name, Mobile: params.Mobile, Password: utils.BcryptMake([]byte(params.Password)), LastTime: utils.DateNowFormatStr(), Ip: utils.GetClientIP(r)}
+/Users/jideweixiao/Project/work/superman-gin/app/controllers/app/auth.go:29 (0x102d15a37)
+	Register: if err, user := services.UserService.Register(form); err != nil {
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x102c8df6b)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 (0x102c8df4c)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x102c8d1eb)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 (0x102c8d1c8)
+	LoggerWithConfig.func1: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x102c8c2fb)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620 (0x102c8bff8)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576 (0x102c8bc03)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/usr/local/go/src/net/http/server.go:2936 (0x102820cd7)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/go/src/net/http/server.go:1995 (0x10281c9cf)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/go/src/runtime/asm_arm64.s:1172 (0x1025f2203)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+
+
+[31m2023/11/12 02:40:20 [Recovery] 2023/11/12 - 02:40:20 panic recovered:
+POST /api/auth/register HTTP/1.1
+Host: localhost:8888
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 81
+Content-Type: application/json
+Postman-Token: b24dafcd-7a87-4d22-9c87-377d30854d65
+User-Agent: PostmanRuntime/7.29.2
+
+
+runtime error: invalid memory address or nil pointer dereference
+/usr/local/go/src/runtime/panic.go:260 (0x1025bdff7)
+	panicmem: panic(memoryError)
+/usr/local/go/src/runtime/signal_unix.go:841 (0x1025d6aa7)
+	sigpanic: panicmem()
+/Users/jideweixiao/Project/work/superman-gin/app/common/utils/str.go:23 (0x102b9030c)
+	GetClientIP: xForwardedFor := r.Header.Get("X-Forwarded-For")
+/Users/jideweixiao/Project/work/superman-gin/app/services/user.go:26 (0x102ca4027)
+	(*userService).Register: user = models.User{Name: params.Name, Mobile: params.Mobile, Password: utils.BcryptMake([]byte(params.Password)), LastTime: utils.DateNowFormatStr(), Ip: utils.GetClientIP(r)}
+/Users/jideweixiao/Project/work/superman-gin/app/controllers/app/auth.go:29 (0x102d15a37)
+	Register: if err, user := services.UserService.Register(form); err != nil {
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x102c8df6b)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 (0x102c8df4c)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x102c8d1eb)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 (0x102c8d1c8)
+	LoggerWithConfig.func1: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x102c8c2fb)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620 (0x102c8bff8)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576 (0x102c8bc03)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/usr/local/go/src/net/http/server.go:2936 (0x102820cd7)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/go/src/net/http/server.go:1995 (0x10281c9cf)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/go/src/runtime/asm_arm64.s:1172 (0x1025f2203)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+
+
+[31m2023/11/12 02:41:19 [Recovery] 2023/11/12 - 02:41:19 panic recovered:
+POST /api/auth/register HTTP/1.1
+Host: localhost:8888
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 81
+Content-Type: application/json
+Postman-Token: d3622fb1-d2ce-4f66-b583-7c2b0bd45a4f
+User-Agent: PostmanRuntime/7.29.2
+
+
+runtime error: invalid memory address or nil pointer dereference
+/usr/local/go/src/runtime/panic.go:260 (0x100315ff7)
+	panicmem: panic(memoryError)
+/usr/local/go/src/runtime/signal_unix.go:841 (0x10032eaa7)
+	sigpanic: panicmem()
+/Users/jideweixiao/Project/work/superman-gin/app/common/utils/str.go:23 (0x1008e830c)
+	GetClientIP: xForwardedFor := r.Header.Get("X-Forwarded-For")
+/Users/jideweixiao/Project/work/superman-gin/app/services/user.go:26 (0x1009fc027)
+	(*userService).Register: user = models.User{Name: params.Name, Mobile: params.Mobile, Password: utils.BcryptMake([]byte(params.Password)), LastTime: utils.DateNowFormatStr(), Ip: utils.GetClientIP(r)}
+/Users/jideweixiao/Project/work/superman-gin/app/controllers/app/auth.go:29 (0x100a6da37)
+	Register: if err, user := services.UserService.Register(form); err != nil {
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x1009e5f6b)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 (0x1009e5f4c)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x1009e51eb)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 (0x1009e51c8)
+	LoggerWithConfig.func1: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x1009e42fb)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620 (0x1009e3ff8)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576 (0x1009e3c03)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/usr/local/go/src/net/http/server.go:2936 (0x100578cd7)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/go/src/net/http/server.go:1995 (0x1005749cf)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/go/src/runtime/asm_arm64.s:1172 (0x10034a203)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+
+
+[31m2023/11/12 02:41:20 [Recovery] 2023/11/12 - 02:41:20 panic recovered:
+POST /api/auth/register HTTP/1.1
+Host: localhost:8888
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 81
+Content-Type: application/json
+Postman-Token: 8aa09dcf-3b42-4eba-aa3c-63dabd97290f
+User-Agent: PostmanRuntime/7.29.2
+
+
+runtime error: invalid memory address or nil pointer dereference
+/usr/local/go/src/runtime/panic.go:260 (0x100315ff7)
+	panicmem: panic(memoryError)
+/usr/local/go/src/runtime/signal_unix.go:841 (0x10032eaa7)
+	sigpanic: panicmem()
+/Users/jideweixiao/Project/work/superman-gin/app/common/utils/str.go:23 (0x1008e830c)
+	GetClientIP: xForwardedFor := r.Header.Get("X-Forwarded-For")
+/Users/jideweixiao/Project/work/superman-gin/app/services/user.go:26 (0x1009fc027)
+	(*userService).Register: user = models.User{Name: params.Name, Mobile: params.Mobile, Password: utils.BcryptMake([]byte(params.Password)), LastTime: utils.DateNowFormatStr(), Ip: utils.GetClientIP(r)}
+/Users/jideweixiao/Project/work/superman-gin/app/controllers/app/auth.go:29 (0x100a6da37)
+	Register: if err, user := services.UserService.Register(form); err != nil {
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x1009e5f6b)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 (0x1009e5f4c)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x1009e51eb)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 (0x1009e51c8)
+	LoggerWithConfig.func1: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x1009e42fb)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620 (0x1009e3ff8)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576 (0x1009e3c03)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/usr/local/go/src/net/http/server.go:2936 (0x100578cd7)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/go/src/net/http/server.go:1995 (0x1005749cf)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/go/src/runtime/asm_arm64.s:1172 (0x10034a203)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+
+
+[31m2023/11/12 02:43:07 [Recovery] 2023/11/12 - 02:43:07 panic recovered:
+POST /api/auth/register HTTP/1.1
+Host: localhost:8888
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 81
+Content-Type: application/json
+Postman-Token: 17dc545d-2f5a-4c13-9fae-19407b110d69
+User-Agent: PostmanRuntime/7.29.2
+
+
+runtime error: invalid memory address or nil pointer dereference
+/usr/local/go/src/runtime/panic.go:260 (0x1043e5ff7)
+	panicmem: panic(memoryError)
+/usr/local/go/src/runtime/signal_unix.go:841 (0x1043feaa7)
+	sigpanic: panicmem()
+/Users/jideweixiao/Project/work/superman-gin/app/common/utils/str.go:23 (0x1049b830c)
+	GetClientIP: xForwardedFor := r.Header.Get("X-Forwarded-For")
+/Users/jideweixiao/Project/work/superman-gin/app/services/user.go:26 (0x104acc027)
+	(*userService).Register: user = models.User{Name: params.Name, Mobile: params.Mobile, Password: utils.BcryptMake([]byte(params.Password)), LastTime: utils.DateNowFormatStr(), Ip: utils.GetClientIP(r)}
+/Users/jideweixiao/Project/work/superman-gin/app/controllers/app/auth.go:29 (0x104b3da37)
+	Register: if err, user := services.UserService.Register(form); err != nil {
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x104ab5f6b)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 (0x104ab5f4c)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x104ab51eb)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 (0x104ab51c8)
+	LoggerWithConfig.func1: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x104ab42fb)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620 (0x104ab3ff8)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576 (0x104ab3c03)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/usr/local/go/src/net/http/server.go:2936 (0x104648cd7)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/go/src/net/http/server.go:1995 (0x1046449cf)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/go/src/runtime/asm_arm64.s:1172 (0x10441a203)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+
+
+[31m2023/11/12 02:43:09 [Recovery] 2023/11/12 - 02:43:09 panic recovered:
+POST /api/auth/register HTTP/1.1
+Host: localhost:8888
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 81
+Content-Type: application/json
+Postman-Token: cff3a902-e351-4f01-bf57-f7fd461748cb
+User-Agent: PostmanRuntime/7.29.2
+
+
+runtime error: invalid memory address or nil pointer dereference
+/usr/local/go/src/runtime/panic.go:260 (0x1043e5ff7)
+	panicmem: panic(memoryError)
+/usr/local/go/src/runtime/signal_unix.go:841 (0x1043feaa7)
+	sigpanic: panicmem()
+/Users/jideweixiao/Project/work/superman-gin/app/common/utils/str.go:23 (0x1049b830c)
+	GetClientIP: xForwardedFor := r.Header.Get("X-Forwarded-For")
+/Users/jideweixiao/Project/work/superman-gin/app/services/user.go:26 (0x104acc027)
+	(*userService).Register: user = models.User{Name: params.Name, Mobile: params.Mobile, Password: utils.BcryptMake([]byte(params.Password)), LastTime: utils.DateNowFormatStr(), Ip: utils.GetClientIP(r)}
+/Users/jideweixiao/Project/work/superman-gin/app/controllers/app/auth.go:29 (0x104b3da37)
+	Register: if err, user := services.UserService.Register(form); err != nil {
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x104ab5f6b)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 (0x104ab5f4c)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x104ab51eb)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 (0x104ab51c8)
+	LoggerWithConfig.func1: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x104ab42fb)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620 (0x104ab3ff8)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576 (0x104ab3c03)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/usr/local/go/src/net/http/server.go:2936 (0x104648cd7)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/go/src/net/http/server.go:1995 (0x1046449cf)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/go/src/runtime/asm_arm64.s:1172 (0x10441a203)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+
+
+[31m2023/11/12 14:24:26 [Recovery] 2023/11/12 - 14:24:26 panic recovered:
+POST /api/auth/register HTTP/1.1
+Host: localhost:8888
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 79
+Content-Type: application/json
+Postman-Token: 8ff356e9-6cef-4484-a296-8ca5cf4fa36d
+User-Agent: PostmanRuntime/7.29.2
+
+
+runtime error: invalid memory address or nil pointer dereference
+/usr/local/go/src/runtime/panic.go:260 (0x1009d0cc7)
+	panicmem: panic(memoryError)
+/usr/local/go/src/runtime/signal_unix.go:841 (0x1009e889f)
+	sigpanic: panicmem()
+/Users/jideweixiao/Project/work/superman-gin/app/common/utils/str.go:23 (0x1011efd8c)
+	GetClientIP: xForwardedFor := r.Header.Get("X-Forwarded-For")
+/Users/jideweixiao/Project/work/superman-gin/app/services/user.go:28 (0x10136dc37)
+	(*userService).Register: user = models.User{Name: params.Name, Mobile: params.Mobile, Password: utils.BcryptMake([]byte(params.Password)), LastTime: utils.DateNowFormatStr(), Ip: utils.GetClientIP(r)}
+/Users/jideweixiao/Project/work/superman-gin/app/controllers/app/auth.go:29 (0x10141995b)
+	Register: if err, user := services.UserService.Register(form); err != nil {
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x10133bd87)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 (0x10134c717)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x10133bd87)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 (0x10134b3a3)
+	LoggerWithConfig.func1: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x10133bd87)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620 (0x1013491c7)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576 (0x101348d7f)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/usr/local/go/src/net/http/server.go:2936 (0x100d63647)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/go/src/net/http/server.go:1995 (0x100d5e26b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/go/src/runtime/asm_arm64.s:1172 (0x100a03643)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+
+
+[31m2023/11/12 14:27:42 [Recovery] 2023/11/12 - 14:27:42 panic recovered:
+POST /api/auth/register HTTP/1.1
+Host: localhost:8888
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 79
+Content-Type: application/json
+Postman-Token: bd6f475c-db51-4ea5-b2a2-4beb9f2aeee0
+User-Agent: PostmanRuntime/7.29.2
+
+
+runtime error: invalid memory address or nil pointer dereference
+/usr/local/go/src/runtime/panic.go:260 (0x1047d8cc7)
+	panicmem: panic(memoryError)
+/usr/local/go/src/runtime/signal_unix.go:841 (0x1047f089f)
+	sigpanic: panicmem()
+/Users/jideweixiao/Project/work/superman-gin/app/common/utils/str.go:23 (0x104ff7d8c)
+	GetClientIP: xForwardedFor := r.Header.Get("X-Forwarded-For")
+/Users/jideweixiao/Project/work/superman-gin/app/services/user.go:28 (0x105175c37)
+	(*userService).Register: user = models.User{Name: params.Name, Mobile: params.Mobile, Password: utils.BcryptMake([]byte(params.Password)), LastTime: utils.DateNowFormatStr(), Ip: utils.GetClientIP(r)}
+/Users/jideweixiao/Project/work/superman-gin/app/controllers/app/auth.go:29 (0x10522195b)
+	Register: if err, user := services.UserService.Register(form); err != nil {
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x105143d87)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 (0x105154717)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x105143d87)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 (0x1051533a3)
+	LoggerWithConfig.func1: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x105143d87)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620 (0x1051511c7)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576 (0x105150d7f)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/usr/local/go/src/net/http/server.go:2936 (0x104b6b647)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/go/src/net/http/server.go:1995 (0x104b6626b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/go/src/runtime/asm_arm64.s:1172 (0x10480b643)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+
+
+[31m2023/11/12 14:31:01 [Recovery] 2023/11/12 - 14:31:01 panic recovered:
+POST /api/auth/register HTTP/1.1
+Host: localhost:8888
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 79
+Content-Type: application/json
+Postman-Token: 1e37d73d-630e-4675-89b9-7412a4bf6ac6
+User-Agent: PostmanRuntime/7.29.2
+
+
+runtime error: invalid memory address or nil pointer dereference
+/usr/local/go/src/runtime/panic.go:260 (0x1006b4cc7)
+	panicmem: panic(memoryError)
+/usr/local/go/src/runtime/signal_unix.go:841 (0x1006cc89f)
+	sigpanic: panicmem()
+/Users/jideweixiao/Project/work/superman-gin/app/common/utils/str.go:23 (0x100ed3d8c)
+	GetClientIP: xForwardedFor := r.Header.Get("X-Forwarded-For")
+/Users/jideweixiao/Project/work/superman-gin/app/services/user.go:28 (0x101051c37)
+	(*userService).Register: user = models.User{Name: params.Name, Mobile: params.Mobile, Password: utils.BcryptMake([]byte(params.Password)), LastTime: utils.DateNowFormatStr(), Ip: utils.GetClientIP(r)}
+/Users/jideweixiao/Project/work/superman-gin/app/controllers/app/auth.go:29 (0x1010fd95b)
+	Register: if err, user := services.UserService.Register(form); err != nil {
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x10101fd87)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 (0x101030717)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x10101fd87)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 (0x10102f3a3)
+	LoggerWithConfig.func1: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x10101fd87)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620 (0x10102d1c7)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576 (0x10102cd7f)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/usr/local/go/src/net/http/server.go:2936 (0x100a47647)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/go/src/net/http/server.go:1995 (0x100a4226b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/go/src/runtime/asm_arm64.s:1172 (0x1006e7643)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+
+
+[31m2023/11/12 14:32:09 [Recovery] 2023/11/12 - 14:32:09 panic recovered:
+POST /api/auth/register HTTP/1.1
+Host: localhost:8888
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 79
+Content-Type: application/json
+Postman-Token: b7c0301c-409b-47b7-9a65-2c6719dee92a
+User-Agent: PostmanRuntime/7.29.2
+
+
+runtime error: invalid memory address or nil pointer dereference
+/usr/local/go/src/runtime/panic.go:260 (0x1006b4cc7)
+	panicmem: panic(memoryError)
+/usr/local/go/src/runtime/signal_unix.go:841 (0x1006cc89f)
+	sigpanic: panicmem()
+/Users/jideweixiao/Project/work/superman-gin/app/common/utils/str.go:23 (0x100ed3d8c)
+	GetClientIP: xForwardedFor := r.Header.Get("X-Forwarded-For")
+/Users/jideweixiao/Project/work/superman-gin/app/services/user.go:28 (0x101051c37)
+	(*userService).Register: user = models.User{Name: params.Name, Mobile: params.Mobile, Password: utils.BcryptMake([]byte(params.Password)), LastTime: utils.DateNowFormatStr(), Ip: "127.0.0.1"}
+/Users/jideweixiao/Project/work/superman-gin/app/controllers/app/auth.go:29 (0x1010fd95b)
+	Register: if err, user := services.UserService.Register(form); err != nil {
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x10101fd87)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 (0x101030717)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x10101fd87)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 (0x10102f3a3)
+	LoggerWithConfig.func1: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x10101fd87)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620 (0x10102d1c7)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576 (0x10102cd7f)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/usr/local/go/src/net/http/server.go:2936 (0x100a47647)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/go/src/net/http/server.go:1995 (0x100a4226b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/go/src/runtime/asm_arm64.s:1172 (0x1006e7643)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+
+
+[31m2023/11/12 14:33:08 [Recovery] 2023/11/12 - 14:33:08 panic recovered:
+POST /api/auth/register HTTP/1.1
+Host: localhost:8888
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 79
+Content-Type: application/json
+Postman-Token: 6612a0f5-45a9-43ed-ae15-3ae98caeb61c
+User-Agent: PostmanRuntime/7.29.2
+
+
+runtime error: invalid memory address or nil pointer dereference
+/usr/local/go/src/runtime/panic.go:260 (0x104c00cc7)
+	panicmem: panic(memoryError)
+/usr/local/go/src/runtime/signal_unix.go:841 (0x104c1889f)
+	sigpanic: panicmem()
+/Users/jideweixiao/Project/work/superman-gin/app/common/utils/str.go:23 (0x10541fd8c)
+	GetClientIP: xForwardedFor := r.Header.Get("X-Forwarded-For")
+/Users/jideweixiao/Project/work/superman-gin/app/services/user.go:28 (0x10559dc37)
+	(*userService).Register: user = models.User{Name: params.Name, Mobile: params.Mobile, Password: utils.BcryptMake([]byte(params.Password)), LastTime: utils.DateNowFormatStr(), Ip: utils.GetClientIP(r)}
+/Users/jideweixiao/Project/work/superman-gin/app/controllers/app/auth.go:29 (0x10564995b)
+	Register: if err, user := services.UserService.Register(form); err != nil {
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x10556bd87)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 (0x10557c717)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x10556bd87)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 (0x10557b3a3)
+	LoggerWithConfig.func1: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x10556bd87)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620 (0x1055791c7)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576 (0x105578d7f)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/usr/local/go/src/net/http/server.go:2936 (0x104f93647)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/go/src/net/http/server.go:1995 (0x104f8e26b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/go/src/runtime/asm_arm64.s:1172 (0x104c33643)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+
+
+[31m2023/11/12 14:37:12 [Recovery] 2023/11/12 - 14:37:12 panic recovered:
+POST /api/auth/register HTTP/1.1
+Host: localhost:8888
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 79
+Content-Type: application/json
+Postman-Token: 387e76d8-ac3d-4852-8431-a2b710838e3d
+User-Agent: PostmanRuntime/7.29.2
+
+
+runtime error: invalid memory address or nil pointer dereference
+/usr/local/go/src/runtime/panic.go:260 (0x1009bccc7)
+	panicmem: panic(memoryError)
+/usr/local/go/src/runtime/signal_unix.go:841 (0x1009d489f)
+	sigpanic: panicmem()
+/Users/jideweixiao/Project/work/superman-gin/app/common/utils/str.go:23 (0x1011dbd8c)
+	GetClientIP: xForwardedFor := r.Header.Get("X-Forwarded-For")
+/Users/jideweixiao/Project/work/superman-gin/app/services/user.go:28 (0x101359c37)
+	(*userService).Register: user = models.User{Name: params.Name, Mobile: params.Mobile, Password: utils.BcryptMake([]byte(params.Password)), LastTime: utils.DateNowFormatStr(), Ip: utils.GetClientIP(r)}
+/Users/jideweixiao/Project/work/superman-gin/app/controllers/app/auth.go:29 (0x10140595b)
+	Register: if err, user := services.UserService.Register(form); err != nil {
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x101327d87)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 (0x101338717)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x101327d87)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 (0x1013373a3)
+	LoggerWithConfig.func1: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 (0x101327d87)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620 (0x1013351c7)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/jideweixiao/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576 (0x101334d7f)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/usr/local/go/src/net/http/server.go:2936 (0x100d4f647)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/go/src/net/http/server.go:1995 (0x100d4a26b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/go/src/runtime/asm_arm64.s:1172 (0x1009ef643)
+	goexit: MOVD	R0, R0	// NOP
+[0m

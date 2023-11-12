@@ -2,11 +2,12 @@ package services
 
 import (
 	"errors"
+	"net/http"
 	"strconv"
 	"superman-gin/app/common/request"
+	"superman-gin/app/common/utils"
 	"superman-gin/app/models"
 	"superman-gin/global"
-	"superman-gin/utils"
 )
 
 type userService struct {
@@ -16,12 +17,14 @@ var UserService = new(userService)
 
 // Register 注册
 func (userService *userService) Register(params request.Register) (err error, user models.User) {
+	r := &http.Request{}
 	var result = global.App.DB.Where("mobile = ?", params.Mobile).Select("id").First(&models.User{})
 	if result.RowsAffected != 0 {
 		err = errors.New("手机号已存在")
 		return
 	}
-	user = models.User{Name: params.Name, Mobile: params.Mobile, Password: utils.BcryptMake([]byte(params.Password))}
+	// user = models.User{Name: params.Name, Mobile: params.Mobile, Password: utils.BcryptMake([]byte(params.Password)), LastTime: utils.DateNowFormatStr(), Ip: utils.GetClientIP(r)}
+	user = models.User{Name: params.Name, Mobile: params.Mobile, Password: utils.BcryptMake([]byte(params.Password)), LastTime: utils.DateNowFormatStr(), Ip: utils.GetClientIP(r)}
 	err = global.App.DB.Create(&user).Error
 	return
 }
@@ -32,6 +35,14 @@ func (userService *userService) Login(params request.Login) (err error, user *mo
 	if err != nil || !utils.BcryptMakeCheck([]byte(params.Password), user.Password) {
 		err = errors.New("用户名不存在或密码错误")
 	}
+	user.Ip = utils.GetClientIP(&http.Request{})
+	user.LastTime = utils.DateNowFormatStr()
+	err = global.App.DB.Save(&user).Error
+	if err != nil {
+		// 处理更新错误
+		return
+	}
+
 	return
 }
 

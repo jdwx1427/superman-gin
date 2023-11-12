@@ -3,7 +3,7 @@ package bootstrap
 import (
 	"reflect"
 	"strings"
-	"superman-gin/utils"
+	"superman-gin/app/common/utils"
 
 	"github.com/gin-gonic/gin/binding"
 	"github.com/go-playground/validator/v10"
