@@ -54,7 +54,7 @@ func Login(c *gin.Context) {
 		return
 	}
 
-	if err, user := services.UserService.Login(form); err != nil {
+	if err, user := services.UserService.Login(c, form); err != nil {
 		response.BusinessFail(c, err.Error())
 	} else {
 		tokenData, err, _ := services.JwtService.CreateToken(services.AppGuardName, user)

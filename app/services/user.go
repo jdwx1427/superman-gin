@@ -8,6 +8,8 @@ import (
 	"superman-gin/app/common/utils"
 	"superman-gin/app/models"
 	"superman-gin/global"
+
+	"github.com/gin-gonic/gin"
 )
 
 type userService struct {
@@ -30,14 +32,20 @@ func (userService *userService) Register(params request.Register) (err error, us
 }
 
 // Login 登录
-func (userService *userService) Login(params request.Login) (err error, user *models.User) {
+func (userService *userService) Login(c *gin.Context, params request.Login) (err error, user *models.User) {
 	err = global.App.DB.Where("mobile = ?", params.Mobile).First(&user).Error
 	if err != nil || !utils.BcryptMakeCheck([]byte(params.Password), user.Password) {
 		err = errors.New("用户名不存在或密码错误")
+		return
 	}
-	user.Ip = utils.GetClientIP(&http.Request{})
+	req := c.Request
+	user.Ip = utils.GetClientIP(req)
 	user.LastTime = utils.DateNowFormatStr()
-	err = global.App.DB.Save(&user).Error
+
+	err = global.App.DB.Model(&models.User{}).Where("mobile = ?", params.Mobile).Updates(map[string]interface{}{
+		"ip":        user.Ip,
+		"last_time": user.LastTime,
+	}).Error
 	if err != nil {
 		// 处理更新错误
 		return
